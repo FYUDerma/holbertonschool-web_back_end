@@ -36,8 +36,9 @@ class Server:
         assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
         return self.dataset()[start:end]
-    
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> typing.Dict[str, typing.Any]:
+
+    def get_hyper(self, page: int = 1, page_size: int = 10) \
+            -> typing.Dict[str, typing.Any]:
         """Get page with hypermedia"""
         data = self.get_page(page, page_size)
         total_page = math.ceil(len(self.__dataset) / page_size)
