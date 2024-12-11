@@ -2,10 +2,10 @@
 """0. Async Generator"""
 import asyncio
 import random
-from typing import AsyncGenerator
+import typing
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_generator() -> typing.Generator[float, None, None]:
     """Async Generator"""
     for _ in range(10):
         yield random.uniform(0, 10)
