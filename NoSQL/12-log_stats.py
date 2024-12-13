@@ -12,9 +12,9 @@ def log_stats():
     print(f"{total_logs} logs")
 
     print("Methods:")
-    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-    for method in methods:
-        count = logs.count_documents({"method": method})
+    method = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    for methods in method:
+        count = logs.count_documents({"method": methods})
         print(f"\tmethod {method}: {count}")
 
     status_check = logs.count_documents({
