@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """Log Stats"""
-
-
 from pymongo import MongoClient
 
 
 def log_stats():
     """Log Stats"""
-    client = MongoClient('mongodb://127.0.0.1:27017')
+    client = MongoClient()
     logs = client.logs.nginx
 
     total_logs = logs.count_documents({})
