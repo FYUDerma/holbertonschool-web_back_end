@@ -17,11 +17,8 @@ def log_stats():
         count = logs.count_documents({"method": methods})
         print(f"\tmethod {methods}: {count}")
 
-    status_check = logs.count_documents({
-        "method": "GET",
-        "path": "/status"
-        })
-    print(f"{status_check} status check")
+    stat_check = logs.count_documents({"method": "GET", "path": "/status"})
+    print(f"{stat_check} status check")
 
 
 if __name__ == "__main__":
