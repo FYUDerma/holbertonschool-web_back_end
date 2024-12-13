@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Log Stats"""
-if __name__ == "__main__":
-    from pymongo import MongoClient
+from pymongo import MongoClient
+
+
+def log_stats():
     """Log Stats"""
     client = MongoClient()
     logs = client.logs.nginx
@@ -33,3 +35,7 @@ if __name__ == "__main__":
         "path": "/status"
         })
     print(f'{method_get_path} status check')
+
+
+if __name__ == "__main__":
+    log_stats()
