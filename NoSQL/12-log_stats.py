@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Log Stats
-
-This module provides statistics about Nginx logs stored in MongoDB.
-"""
+"""Log Stats"""
 from pymongo import MongoClient
 
 
@@ -24,4 +21,3 @@ if __name__ == "__main__":
         'path': '/status'
         })
     print(f'{status_check} status check')
-    
