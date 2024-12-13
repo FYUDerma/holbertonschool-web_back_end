@@ -1,2 +1,2 @@
-// Update 
-db.school.update({ name :"Holberton school" }, { $set: {address :"972 Mission St."} }, { multi: true });
+// Update adding address field
+db.school.update({ name :"Holberton school" },{ $set: {address :"972 Mission St."} }, { multi: true });
