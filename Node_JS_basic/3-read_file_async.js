@@ -1,9 +1,6 @@
 const fs = require('node:fs');
 
-/**
- * Reads a CSV file and counts students by their field of study.
- * @param {string} filepath - The path to the CSV file.
- */
+
 function countStudents(filepath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filepath, 'utf8', (err, data) => {
@@ -12,7 +9,6 @@ function countStudents(filepath) {
         return;
       }
 
-    // Split the content into lines and trim whitespace
     const lines = data.trim().split('\n').filter(line => line.trim() !== '');
 
     const students = lines.slice(1);
