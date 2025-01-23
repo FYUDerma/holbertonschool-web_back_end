@@ -12,35 +12,30 @@ function countStudents(filepath) {
     // Split the content into lines and trim whitespace
     const lines = data.trim().split('\n').filter(line => line.trim() !== '');
 
-    // Get the headers from the first line
-    const headers = lines[0].split(',');
+    const students = lines.slice(1);
+    const fields = {};
 
-    // Create an array of student objects from the remaining lines
-    const students = lines.slice(1).map((line) => {
-      const values = line.split(',');
-      return headers.reduce((acc, header, index) => {
-        acc[header] = values[index];
-        return acc;
-      }, {});
+    students.forEach((line) => {
+      const split = line.split(','); // Corrected line
+      if (split.length < 4) return;
+
+      const firstnames = split[0].trim();
+      const field = split[3].trim();
+
+      if (!fields[field]) {
+        fields[field] = [];
+      }
+
+      fields[field].push(firstnames);
     });
 
     console.log(`Number of students: ${students.length}`);
-
-    // Group students by their field of study
-    const fields = students.reduce((acc, student) => {
-      const { field } = student;
-      if (!acc[field]) {
-        acc[field] = [];
-      }
-      acc[field].push(student.firstname);
-      return acc;
-    }, {});
 
     for (const [field, firstnames] of Object.entries(fields)) {
       console.log(`Number of students in ${field}: ${firstnames.length}. List: ${firstnames.join(', ')}`);
     }
   } catch (error) {
-    console.error('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 }
 
