@@ -16,4 +16,4 @@ function processStdin() {
   });
 }
 
-module.exports = processStdin;
+processStdin();
