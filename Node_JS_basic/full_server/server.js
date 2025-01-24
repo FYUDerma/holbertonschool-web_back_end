@@ -1,5 +1,5 @@
 import express from 'express';
-import controlRoute from './routes/index';
+import controlRoute from '../full_server/routes/index';
 
 const app = express();
 const port = 1245;

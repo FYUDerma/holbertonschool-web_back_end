@@ -1,9 +1,9 @@
-import readDatabase from '../utils';
+import readDatabase from '../utils.js';
 
 class StudentsController {
   static getAllStudents(request, response, DATABASE) {
     readDatabase(DATABASE)
-      .then((data) => {
+      .then((fields) => {
         const students = [];
 
         let message;
