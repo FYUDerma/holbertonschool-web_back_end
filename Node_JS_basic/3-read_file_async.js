@@ -9,7 +9,7 @@ function countStudents(filepath) {
         return;
       }
 
-    const lines = data.trim().split('\n').filter(line => line.trim() !== '');
+    const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
 
     const students = lines.slice(1);
     const fields = {};

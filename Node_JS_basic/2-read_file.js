@@ -10,7 +10,7 @@ function countStudents(filepath) {
     const data = fs.readFileSync(filepath, 'utf8');
 
     // Split the content into lines and trim whitespace
-    const lines = data.trim().split('\n').filter(line => line.trim() !== '');
+    const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
 
     const students = lines.slice(1);
     const fields = {};
